@@ -10,12 +10,12 @@ def run_game():
 
 #Запуск основного цикла игры
 
-while True:
+    while True:
 
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            sys.exit()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
 
-            pygame.display.flip()
+        pygame.display.flip()
 
 run_game()
