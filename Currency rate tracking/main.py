@@ -31,7 +31,7 @@ class Currency:
         elif currency<= self.current_converted_price - self.difference:
             print("The course has fallen.")
         print("Current rate: 1 dollar = "+str(currency) +" czech koruna.")
-        time.sleep(3)
+        time.sleep(1800)
         self.check_currency()
 
 currency = Currency()
