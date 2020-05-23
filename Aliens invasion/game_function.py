@@ -12,6 +12,8 @@ def check_keydown_events(event, ai_settings, screen, ship, bullets):
         #Создание новой пули и включение ее в группу bullets.
         new_bullet = Bullet(ai_settings, screen, ship)
         bullets.add(new_bullet)
+    elif event.key == pygame.K_q:
+        sys.exit()
 
 def check_keyup_events(event, ship):
     """Реагирует на отпускание клавиш."""
