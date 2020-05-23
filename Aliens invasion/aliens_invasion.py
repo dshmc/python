@@ -25,12 +25,11 @@ def run_game():
     while True:
 # Отслеживание событий клавиатуры и мыши
         gf.check_events(ai_settings, screen, ship, bullets)
+        
         ship.update()
         bullets.update()
-        for bullet in bullets.copy():
-            if bullet.rect.bottom <= 0:
-                bullets.remove(bullet)
-            print(len(bullets))
+        gf.update_bullets(bullets)   
         gf.update_screen(ai_settings, screen, ship, bullets)
+        print(len(bullets))
 
 run_game()
