@@ -19,7 +19,7 @@ def run_game():
     aliens = Group()
 
     # Созданиефлота пришельцев.
-    gf.create_fleet(ai_settings, screen, aliens)
+    gf.create_fleet(ai_settings, screen, ship, aliens)
 
 
     # Создание пришельца
