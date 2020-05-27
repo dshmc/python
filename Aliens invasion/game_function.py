@@ -50,7 +50,7 @@ def create_fleet(ai_settings, screen, ship, aliens):
                 row_number)
 
 
-def update_bullets(aliens, bullets):
+def update_bullets(ai_settings, screen, ship, aliens, bullets):
     """Обновляет позиции пуль и уничтожает старые пули."""
     # Обновление позиции пуль.
     bullets.update()
@@ -59,12 +59,17 @@ def update_bullets(aliens, bullets):
     for bullet in bullets.copy():
             if bullet.rect.bottom <= 0:
                 bullets.remove(bullet)
-            #print(len(bullets))
+            print(len(bullets))
 
     
     # Проверка попаданий в пришельцев.
     # При обнаружении попадания удалить пулю и пришельца.
     collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
+
+    if len(aliens) == 0:
+        #Уничтожение существующих пуль и создание нового флота.
+        bullets.empty()
+        create_fleet(ai_settings, screen, ship, aliens)
 
 
 def check_keydown_events(event, ai_settings, screen, ship, bullets):
