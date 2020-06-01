@@ -33,12 +33,12 @@ def run_game():
     while True:
 # Отслеживание событий клавиатуры и мыши
         gf.check_events(ai_settings, screen, ship, bullets)
-        
-        ship.update()
-        bullets.update()
-        gf.update_bullets(ai_settings, screen, ship, aliens, bullets)   
-        gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)
-        gf.update_screen(ai_settings, screen, ship, aliens, bullets)
+        if stats.game_active:
+            ship.update()
+            bullets.update()
+            gf.update_bullets(ai_settings, screen, ship, aliens, bullets)   
+            gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)
+            gf.update_screen(ai_settings, screen, ship, aliens, bullets)
         
         #print(len(bullets))
 
