@@ -20,6 +20,11 @@ class Ship():
         #Флаг перемещения
         self.moving_right = False
         self.moving_left = False
+    
+
+    def center_ship(self):
+        """Размещает корабль в центре нижней стороны."""
+        self.center = self.screen_rect.centerx
 
     def update(self):
         """Обновляет позицию корабля с учетом флагов."""

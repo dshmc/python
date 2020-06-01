@@ -5,6 +5,7 @@ from settings import Settings
 from ship import Ship
 from alien import Alien
 import game_function as gf 
+from game_stats import GmaeStats
 
 def run_game():
     # Инициализация игры и создание объекта экрана
@@ -21,7 +22,7 @@ def run_game():
     # Созданиефлота пришельцев.
     gf.create_fleet(ai_settings, screen, ship, aliens)
 
-
+    stats = GmaeStats(ai_settings)
     # Создание пришельца
     #alien = Alien(ai_settings, screen)
     
@@ -36,7 +37,7 @@ def run_game():
         ship.update()
         bullets.update()
         gf.update_bullets(ai_settings, screen, ship, aliens, bullets)   
-        gf.update_aliens(ai_settings, ship, aliens)
+        gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)
         gf.update_screen(ai_settings, screen, ship, aliens, bullets)
         
         #print(len(bullets))
