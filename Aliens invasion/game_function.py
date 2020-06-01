@@ -3,6 +3,7 @@ import pygame
 from bullet import Bullet
 from alien import Alien
 from time import sleep
+from button import Button
 
 def get_number_rows(ai_settings, ship_height, alien_height):
     """Опредиляет количество рядов, помещающихся на экране."""
@@ -116,18 +117,19 @@ def check_events(ai_settings, screen, ship, bullets):
             check_keyup_events(event, ship)
                 
 
-def update_screen(ai_settings, screen, ship, aliens, bullets):
+def update_screen(ai_settings, screen, stats, ship, aliens, bullets, play_button):
     """Обновляет изображение на экране и отображает новый экран"""
-    screen.fill(ai_settings.bg_color)
-    
+    screen.fill(ai_settings.bg_color) 
     for bullet in bullets.sprites():
         bullet.draw_bullet()
 
     ship.blitme()
     aliens.draw(screen)
+    
+    if not stats.game_active:
+        play_button.draw_button()
 
-
-    #Отображение последнего прорисованого экрана.
+        #Отображение последнего прорисованого экрана.
     pygame.display.flip()
 
 
