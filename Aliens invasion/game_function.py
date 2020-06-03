@@ -76,12 +76,20 @@ def check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship, aliens, 
         for aliens in collisions.values():
             stats.score += ai_settings.allien_points * len(aliens)
         sb.prep_score()
+        check_hight_score(stats, sb)
 
     if len(aliens) == 0:
         #Уничтожение существующих пуль и создание нового флота.
         bullets.empty()
         ai_settings.increase_speed()
         create_fleet(ai_settings, screen, ship, aliens)
+
+def check_hight_score(stats, sb):
+    """Проверяет, появился ли новый рекорд."""
+
+    if stats.score> stats.hight_score:
+        stats.hight_score = stats.score
+        sb.prep_hight_score()
 
 
 def check_keydown_events(event, ai_settings, screen, ship, bullets):
