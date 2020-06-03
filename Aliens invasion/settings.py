@@ -25,7 +25,8 @@ class Settings():
 
 
         #Темп игры 
-        self. speedup_scale = 1.1
+        self.speedup_scale = 1.1
+        self.score_scale = 1.5
         self.initialize_dynamic_settings()
 
     def initialize_dynamic_settings(self):
@@ -43,6 +44,7 @@ class Settings():
         self.ship_speed_factor *= self.speedup_scale
         self.bullet_speed_factor *= self.speedup_scale 
         self.alien_speed_factor *= self.speedup_scale
+        self.allien_points = int(self.allien_points * self.score_scale)
                 
 
         
