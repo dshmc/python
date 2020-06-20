@@ -37,6 +37,6 @@ wm.add('0-10m', cc_pops_1)
 wm.add('10m-1bn', cc_pops_2)
 wm.add('>1bn', cc_pops3)
 
-wm.render_to_file('svg/world_population.svg')
+wm.render_to_file('svg\world_population.svg')
 
        
