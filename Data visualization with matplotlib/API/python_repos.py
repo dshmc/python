@@ -30,9 +30,9 @@ my_config.label_font_size = 14
 my_config.major_label_font_size = 18
 my_config.truncate_label = 15
 my_config.show_y_guides = False
-chart = pygal.Bar( my_config, style=my_style)
 my_config.width - 1000
-chart.title = 'Most-Starred Python Project on GitHub'
+chart = pygal.Bar( my_config, style=my_style)
+chart.title = 'Most-Starred Python Projecсt on GitHub'
 chart.x_labels = names
 
 chart.add('', stars)
