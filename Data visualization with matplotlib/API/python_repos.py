@@ -35,6 +35,12 @@ chart = pygal.Bar( my_config, style=my_style)
 chart.title = 'Most-Starred Python Projecсt on GitHub'
 chart.x_labels = names
 
-chart.add('', stars)
+plot_dicts = [
+    {'value': 16101, 'label': 'Description of httpie.'},
+    {'value': 15028, 'label': 'Description of Django.'},
+    {'value': 14798, 'label': 'Description of Flask.'},
+]   
+
+chart.add('', plot_dicts)
 chart.render_to_file('python_repos.svg')
 
